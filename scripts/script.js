@@ -1,3 +1,5 @@
+const navDialog = document.querySelector("#nav-dialog");
+
 function toggleMenu() {
   navDialog.classList.toggle("active");
 

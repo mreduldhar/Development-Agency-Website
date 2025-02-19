@@ -11,6 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="/styles/responsive.css" />
     <link rel="stylesheet" href="/styles/style.css" />
   </head>
   <body>
@@ -23,6 +24,18 @@
           <h1>Qanci</h1>
         </a>
 
+        <!-- Nav Menu fo desktop -->
+        <div class="nav-menu">
+          <ul class="nav-links flex">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#works">Works</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+          </ul>
+        </div>
+
+        <button class="btn-1">Let&rsquo;s chat</button>
+
         <!-- Hamburger Menu -->
         <div id="hamburger" class="hamburger" onclick="toggleMenu()">
           <img src="./assets/icons/hamburger-icon.svg" alt="hamburger" />
@@ -30,8 +43,7 @@
         </div>
 
         <!-- navigation for mobile -->
-
-        <div id="navDialog">
+        <div id="nav-dialog">
           <!-- mobile header -->
           <div class="mobile-header">
             <div class="mobile-logo">
@@ -43,19 +55,51 @@
             </div>
           </div>
           <div class="nav-list">
-            <ul class="nav-links">
+            <ul class="nav-links flex">
               <li><a href="#home">Home</a></li>
               <li><a href="#works">Works</a></li>
               <li><a href="#about">About Us</a></li>
               <li><a href="#services">Services</a></li>
             </ul>
           </div>
-          <button class="btn">Let&rsquo;s chat</button>
+          <button class="btn-2">Let&rsquo;s chat</button>
 
           <div class="border"></div>
         </div>
       </nav>
     </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section flex">
+      <div class="heading flex">
+        <h1>Development</h1>
+        <div class="second-heading flex">
+          <img src="./assets/icons/code-symbol.png" alt="" />
+          <span class="agency">Agency</span>
+          <img src="./assets/icons/Vector.png" alt="" />
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="./assets/images/hero-bg.png" alt="" />
+      </div>
+    </section>
+
+    <!-- Contact-us and Service Section -->
+    <section class="contact-service-section flex">
+      <!-- Contact-Us Section -->
+      <div class="contact-section">
+        <div class="slogan flex">
+          <div class="dot"></div>
+          <h3>
+            We bring light, joy to the old, mundane or otherwise overlooked.
+          </h3>
+        </div>
+        <div class="contact-us">
+          <a href="#">Contact us</a>
+          <div class="circle-shapes"></div>
+        </div>
+      </div>
+    </section>
 
     <!-- Javascript -->
     <script src="./scripts/script.js"></script>

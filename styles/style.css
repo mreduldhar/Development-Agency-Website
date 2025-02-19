@@ -38,9 +38,8 @@
 :root {
   --primary-color: #022d33;
   --secondary-color: #7f7f7f;
+  --accent-color: #fe5000;
   --font-family: "Inter", sans-serif;
-  --spacing-small: 1rem;
-  --spacing-medium: 2rem;
 }
 
 body {
@@ -51,22 +50,45 @@ body {
   font-weight: 400;
   font-style: normal;
   padding: 16px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-h1 {
+h1,
+h2 {
   font-family: "Bunch";
-  font-size: 2rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 p {
   font-weight: 600;
   font-size: 20px;
 }
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+/* for all flex items */
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-.btn {
+.btn-1 {
+  display: none;
+}
+
+.btn-2 {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 8px;
   width: fit-content;
   margin-top: 3.75rem;
@@ -80,7 +102,7 @@ p {
   cursor: pointer;
 }
 
-.btn::after {
+.btn-2::after {
   content: "";
   width: 6px;
   height: 6px;
@@ -116,6 +138,10 @@ nav a {
   color: var(--primary-color);
 }
 
+.nav-menu {
+  display: none;
+}
+
 /* Mobile View */
 
 #hamburger {
@@ -129,11 +155,11 @@ nav a {
   font-weight: 600;
   cursor: pointer;
 }
-#navDialog {
+#nav-dialog {
   position: fixed;
   top: 0;
   right: -100%;
-  width: 390px;
+  width: 100%;
   height: 100%;
   background-color: #022d33;
   color: white;
@@ -145,17 +171,17 @@ nav a {
 }
 
 /* Show Menu */
-#navDialog.active {
+#nav-dialog.active {
   right: 0;
 }
 
-.mobile-header {
+#nav-dialog .mobile-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.mobile-header .mobile-logo h2 {
+#nav-dialog .mobile-header .mobile-logo h2 {
   font-size: 1rem;
   color: #678185;
 }
@@ -173,19 +199,18 @@ nav a {
   margin-left: auto;
 }
 
-.nav-links {
-  list-style: none;
-  display: flex;
+#nav-dialog .nav-list .nav-links {
+  align-items: normal;
   flex-direction: column;
   gap: 2.75rem;
   padding-top: 4rem;
 }
 
-.nav-links li {
+#nav-dialog .nav-list .nav-links li {
   position: relative;
 }
 
-.nav-links li::after {
+#nav-dialog .nav-list .nav-links li::after {
   content: "";
   position: absolute;
   bottom: -1rem;
@@ -195,18 +220,198 @@ nav a {
   background-color: #678185;
 }
 
-.nav-links li a {
-  text-decoration: none;
+#nav-dialog .nav-list .nav-links li a {
   font-size: 2.375rem;
   color: white;
   font-family: "Bunch";
   font-weight: 600;
 }
 
+/* Hero Section */
+.hero-section {
+  flex-direction: column;
+  text-align: center;
+  margin-top: 5rem;
+}
+.hero-section .heading {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary-color);
+}
+
+.hero-section .heading h1,
+.second-heading {
+  line-height: 3.2rem;
+  letter-spacing: -0.105rem;
+}
+
+.second-heading {
+  align-items: center;
+  gap: 6px;
+}
+
+.agency {
+  font-family: "Bunch";
+  font-size: 3.5rem;
+  font-weight: 600;
+}
+.hero-section .heading h1 {
+  font-size: 3.5rem;
+}
+
+.hero-section .hero-image {
+  margin-top: 2rem;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  object-fit: fill;
+  aspect-ratio: 4/3;
+}
+
+/* contact-service-section */
+.contact-service-section {
+  flex-direction: column;
+  margin-top: 8px;
+}
+.contact-section {
+  padding: 32px 0 36px 32px;
+  background-color: white;
+  border-radius: 2.25rem;
+}
+.slogan {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 8rem;
+}
+.slogan .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+}
+.slogan h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.contact-us a {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--accent-color);
+}
+/* max 767px */
+@media (max-width: 767px) {
+  body {
+    background-image: none;
+  }
+}
 /* Tablets (768px and up) */
 @media (min-width: 768px) {
   body {
     padding: 20px 30px;
+    background-image: url("../assets/images/bg-shape.png");
+    background-position: center top -20px;
+  }
+
+  nav {
+    height: 4.25rem;
+  }
+  /* nav menu */
+  .nav-menu {
+    display: block;
+  }
+  .nav-menu .nav-links {
+    gap: 2.5rem;
+    padding-block: 1.75rem;
+    padding-inline: 2.625rem;
+    background-color: white;
+    border-radius: 5rem;
+  }
+  .nav-menu .nav-links a {
+    color: var(--secondary-color);
+    font-weight: 600;
+    position: relative;
+    padding-left: 10px;
+  }
+  .nav-menu .nav-links a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    transition: width 0.1s, height 0.1s;
+  }
+  .nav-menu .nav-links a:hover::before {
+    width: 5px;
+    height: 5px;
+  }
+  .nav-menu .nav-links a:hover {
+    color: var(--accent-color);
+  }
+  .btn-1 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+    padding: 1.5rem 1.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border: 2px solid #0c0f10;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  .btn-1::after {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: white;
+  }
+  .btn-1:hover {
+    box-shadow: 0px 1px 2px 0px rgba(0, 46, 52, 0.5),
+      0px 1px 1px 3px #033e43 inset;
+  }
+
+  #hamburger {
+    display: none;
+  }
+  #nav-dialog {
+    display: none;
+  }
+
+  /* hero section */
+  .hero-image img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    aspect-ratio: 16/9;
+  }
+
+  /* contact-service-section */
+  .contact-service-section {
+    flex-direction: row;
+  }
+  .contact-section {
+    width: 28rem;
+    padding: 2.5rem;
+  }
+  .slogan {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  .slogan h3 {
+    width: 65%;
   }
 }
 
