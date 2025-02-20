@@ -11,12 +11,12 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/styles/responsive.css" />
     <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="stylesheet" href="/styles/responsive.css" />
   </head>
   <body>
     <!-- Header Section -->
-    <header>
+    <header class="container">
       <nav>
         <!-- Logo -->
         <a href="#">
@@ -37,10 +37,14 @@
         <button class="btn-1">Let&rsquo;s chat</button>
 
         <!-- Hamburger Menu -->
-        <div id="hamburger" class="hamburger" onclick="toggleMenu()">
+        <button
+          id="hamburger"
+          aria-label="Open navigation menu"
+          onclick="toggleMenu()"
+        >
           <img src="./assets/icons/hamburger-icon.svg" alt="hamburger" />
           <span>Menu</span>
-        </div>
+        </button>
 
         <!-- navigation for mobile -->
         <div id="nav-dialog">
@@ -49,10 +53,14 @@
             <div class="mobile-logo">
               <h2>qanci.com</h2>
             </div>
-            <div id="close-bar" class="close-bar" onclick="toggleMenu()">
-              <img src="./assets/icons/close-line.svg" alt="hamburger" />
+            <button
+              id="close-bar"
+              aria-label="Close navigation menu"
+              onclick="toggleMenu()"
+            >
+              <img src="./assets/icons/close-line.svg" alt="Close bar icon" />
               <span>Close</span>
-            </div>
+            </button>
           </div>
           <div class="nav-list">
             <ul class="nav-links flex">
@@ -70,22 +78,22 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-section flex">
+    <section class="hero-section container flex">
       <div class="heading flex">
         <h1>Development</h1>
         <div class="second-heading flex">
-          <img src="./assets/icons/code-symbol.png" alt="" />
+          <img src="./assets/icons/angle.svg" alt="" />
           <span class="agency">Agency</span>
-          <img src="./assets/icons/Vector.png" alt="" />
+          <img src="./assets/icons/Vector.svg" alt="" />
         </div>
       </div>
       <div class="hero-image">
-        <img src="./assets/images/hero-bg.png" alt="" />
+        <img src="./assets/images/hero-image.png" alt="" />
       </div>
     </section>
 
     <!-- Contact-us and Service Section -->
-    <section class="contact-service-section flex">
+    <section class="contact-service-section container flex">
       <!-- Contact-Us Section -->
       <div class="contact-section">
         <div class="slogan flex">
@@ -97,6 +105,69 @@
         <div class="contact-us">
           <a href="#">Contact us</a>
           <div class="circle-shapes"></div>
+        </div>
+      </div>
+
+      <!-- Service Section -->
+      <div class="service-section flex">
+        <div class="left-section flex">
+          <div class="tags">
+            <span>E-commerce</span>
+            <span>Fintech</span>
+            <span>Crypto</span>
+            <span>Robotics</span>
+            <span>Saas</span>
+            <span>VCs</span>
+            <span>Product Design</span>
+          </div>
+        </div>
+
+        <!-- Team Section -->
+        <div class="right-section">
+          <div class="info flex">
+            <div class="left">
+              <img
+                src="./assets/images/member.svg"
+                alt="Member"
+                class="Member image"
+              />
+              <h3>Members</h3>
+            </div>
+            <div class="right">
+              <h2>30+</h2>
+              <div class="icon">
+                <img src="./assets/icons/member-icon.svg" alt="Member icon" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Logo Slider Section -->
+    <section class="container logo-container">
+      <div class="logo-header">
+        <h1>Trusted by your favorite brands and startups</h1>
+      </div>
+
+      <div class="logos-slider">
+        <div class="logo">
+          <img src="./assets/images/hotjar-logo.png" alt="Hotjar Logo" />
+        </div>
+        <div class="logo">
+          <img src="./assets/images/pendo-logo.png" alt="Pendo Logo" />
+        </div>
+        <div class="logo">
+          <img src="./assets/images/pingdom-logo.png" alt="Pingdom Logo" />
+        </div>
+        <div class="logo">
+          <img src="./assets/images/livechat-logo.png" alt="LiveChat Logo" />
+        </div>
+        <div class="logo">
+          <img src="./assets/images/mailchimp-logo.png" alt="Mailchimp Logo" />
+        </div>
+        <div class="logo">
+          <img src="./assets/images/clearbit-logo.png" alt="Clearbit Logo" />
         </div>
       </div>
     </section>

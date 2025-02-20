@@ -1,12 +1,34 @@
-const navDialog = document.querySelector("#nav-dialog");
-
 function toggleMenu() {
-  navDialog.classList.toggle("active");
-
-  // Show/hide hamburger button
-  if (navDialog.classList.contains("active")) {
-    hamburger.style.display = "none";
-  } else {
-    hamburger.style.display = "flex";
+  const navDialog = document.querySelector("#nav-dialog");
+  if (navDialog) {
+    navDialog.classList.toggle("active");
   }
 }
+
+// Infinite Logo Slider
+document.addEventListener("DOMContentLoaded", function () {
+  const logosSlider = document.querySelector(".logos-slider");
+  const logos = document.querySelectorAll(".logo");
+
+  // Duplicate the logos
+  logos.forEach((logo) => {
+    const clone = logo.cloneNode(true);
+    clone.setAttribute("aria-hidden", "true");
+    logosSlider.appendChild(clone);
+  });
+
+  // Adjust animation duration based on the number of logos
+  const logoCount = logos.length;
+  const duration = logoCount * 2;
+  logosSlider.style.animationDuration = `${duration}s`;
+
+  // Pause animation on mouse hover
+  logosSlider.addEventListener("mouseenter", function () {
+    logosSlider.style.animationPlayState = "paused";
+  });
+
+  // Resume animation on mouse leave
+  logosSlider.addEventListener("mouseleave", function () {
+    logosSlider.style.animationPlayState = "running";
+  });
+});

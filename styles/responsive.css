@@ -87,14 +87,76 @@
   }
 
   /* hero section */
+  .hero-section .heading h1,
+  .second-heading {
+    font-size: 7.5rem;
+    line-height: 6.5rem;
+    letter-spacing: -0.225rem;
+  }
+  .second-heading img {
+    height: auto;
+  }
+  .second-heading {
+    gap: 1rem;
+  }
+  .agency {
+    font-size: 7.5rem;
+  }
   .hero-image img {
     max-width: 100%;
     height: auto;
     object-fit: contain;
     aspect-ratio: 16/9;
   }
-}
 
-/* Desktops (1024px and up) */
-@media (min-width: 1024px) {
+  /* contact section */
+  .contact-service-section {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+  .contact-section {
+    width: 28rem;
+    height: 18.4375rem;
+    padding: 2.5rem;
+  }
+  .slogan {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  .slogan h3 {
+    width: 65%;
+  }
+
+  /* service section */
+  .service-section {
+    flex-direction: row;
+    width: 59rem;
+    height: 18.4375rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 50px 45px 40px;
+    background: white;
+    border-radius: 2.5rem;
+  }
+  /* Left Section - Tags */
+  .left-section {
+    align-items: start;
+  }
+  .tags {
+    width: 20.375rem;
+  }
+
+  /* Right Section */
+  .right-section {
+    margin-top: 1rem;
+  }
+
+  /* Logo Slider */
+  .logo-container {
+    padding: 6.25rem 0;
+  }
+  .logo-container::before,
+  .logo-container::after {
+    width: 200px;
+  }
 }
