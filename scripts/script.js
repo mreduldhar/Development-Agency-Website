@@ -32,3 +32,30 @@ document.addEventListener("DOMContentLoaded", function () {
     logosSlider.style.animationPlayState = "running";
   });
 });
+
+// Carousel slider
+document.addEventListener("DOMContentLoaded", function () {
+  const gallery = document.getElementById("works-gallery");
+  const nextButtons = document.querySelectorAll("#next-button");
+  const prevButtons = document.querySelectorAll("#prev-button");
+
+  // width of a single card
+  function getCardWidth() {
+    const card = document.querySelector(".card-item");
+    return card ? card.offsetWidth + 10 : 300; // Default to 300px if no card exists
+  }
+
+  // handle scrolling function
+  function scrollGallery(direction) {
+    const cardWidth = getCardWidth();
+    gallery.scrollBy({ left: direction * cardWidth, behavior: "smooth" });
+  }
+
+  nextButtons.forEach((button) => {
+    button.addEventListener("click", () => scrollGallery(1));
+  });
+
+  prevButtons.forEach((button) => {
+    button.addEventListener("click", () => scrollGallery(-1));
+  });
+});

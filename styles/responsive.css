@@ -7,7 +7,6 @@
 /* Tablets (768px and up) */
 @media (min-width: 768px) {
   body {
-    padding: 20px 30px;
     background-image: url("../assets/images/bg-shape.png");
     background-position: center top -20px;
   }
@@ -138,7 +137,7 @@
     background: white;
     border-radius: 2.5rem;
   }
-  /* Left Section - Tags */
+  /* Left Section */
   .left-section {
     align-items: start;
   }
@@ -158,5 +157,27 @@
   .logo-container::before,
   .logo-container::after {
     width: 200px;
+  }
+
+  /* Recent Works Section */
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 2.5rem;
+  }
+  .section-header .section-title {
+    text-align: left;
+    font-size: 4.375rem;
+    line-height: 3.5rem;
+    letter-spacing: -0.13125rem;
+    margin: 0;
+  }
+
+  #desktop-nav-button {
+    display: flex;
+  }
+  #mobile-nav-button {
+    display: none;
   }
 }
